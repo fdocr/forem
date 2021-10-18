@@ -14,15 +14,15 @@ module NotificationsHelper
   end
 
   def message_user_acted_maybe_org(data, action, if_org: "")
-    key_to_link ->(key) { link_to(data[key]["name"], data[key]["path"], class: "crayons-link fw-bold") }
+    key_to_link = ->(key) { link_to(data[key]["name"], data[key]["path"], class: "crayons-link fw-bold") }
     if if_org.present
       I18n.t(
         action,
-        user: key_to_link["user"],
-        if_org: data["organization"] ? I18n.t(if_org, org: key_to_link["organization"]) : "",
+        user: key_to_link.call("user"),
+        if_org: data["organization"] ? I18n.t(if_org, org: key_to_link.call("organization")) : "",
       )
     else
-      I18n.t(action, user: key_to_link["user"])
+      I18n.t(action, user: key_to_link.call("user"))
     end
   end
 end
