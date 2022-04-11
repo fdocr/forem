@@ -86,7 +86,7 @@
     "@storybook/addon-notes": "^5.3.21",
     "@storybook/addon-storysource": "^6.3.8",
     "@storybook/addons": "^6.2.8",
-    "@storybook/preact": "^6.2.9",
+    "@storybook/preact": "^6.4.21",
     "@testing-library/cypress": "^7.0.7",
     "@testing-library/dom": "^8.6.0",
     "@testing-library/jest-dom": "^5.14.1",
